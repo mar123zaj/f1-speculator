@@ -19,8 +19,6 @@ module.exports = {
     rules: {
       'quotes': 'off',
       '@typescript-eslint/quotes': ['error', 'single'],
-      'indent': 'off',
-      '@typescript-eslint/indent': ['error', 2],
       '@typescript-eslint/comma-dangle': ['error', 'only-multiline'],
       '@typescript-eslint/interface-name-prefix': 'off',
       '@typescript-eslint/explicit-function-return-type': 'error',

@@ -2,7 +2,7 @@
 const path = require('path');
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 require('dotenv').config({
-  path: path.resolve(__dirname, '../../envs/backend.env'),
+  path: path.resolve(__dirname, '../../../envs/backend.env'),
 });
 
 module.exports = {

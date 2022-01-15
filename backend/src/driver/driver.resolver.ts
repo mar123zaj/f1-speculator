@@ -35,4 +35,10 @@ export class DriverResolver {
   async deleteDriver(@Args('id') id: number): Promise<DriverEntity> {
     return this.driverRepository.delete(id);
   }
+
+  @Query(() => [DriverEntity])
+  async drivers(): Promise<DriverEntity[]> {
+    // TODO: Add search method with pagination and filtering instead of findAll
+    return this.driverRepository.findAll();
+  }
 }

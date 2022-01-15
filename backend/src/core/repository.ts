@@ -39,4 +39,10 @@ export abstract class BaseRepository<T> {
     await this.repository.update(id, data);
     return this.findOne(id, options);
   }
+
+  async delete(id: number, options: FindOneOptions<T> = {}): Promise<T> {
+    const model = await this.repository.findOneOrFail(id, options);
+    await this.repository.delete(id);
+    return model;
+  }
 }

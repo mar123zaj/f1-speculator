@@ -30,4 +30,9 @@ export class DriverResolver {
   async driver(@Args('id') id: number): Promise<DriverEntity> {
     return this.driverRepository.findOneOrFail(id);
   }
+
+  @Mutation(() => DriverEntity)
+  async deleteDriver(@Args('id') id: number): Promise<DriverEntity> {
+    return this.driverRepository.delete(id);
+  }
 }

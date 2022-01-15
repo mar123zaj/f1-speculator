@@ -1,5 +1,9 @@
 # f1-speculator
 
+# Goal
+
+Purpose of this application is to have source of Formula 1 data and create algorithm which will speculate results of upcoming races.
+
 ### Data sources
 1. Possible data sources from APIs
 - https://github.com/theOehrly/Fast-F1

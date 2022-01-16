@@ -7,5 +7,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 @Module({
   imports: [TypeOrmModule.forFeature([DriverEntity])],
   providers: [DriverResolver, DriverRepository],
+  exports: [DriverRepository],
 })
 export class DriverModule {}

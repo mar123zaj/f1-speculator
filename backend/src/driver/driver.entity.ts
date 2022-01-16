@@ -1,5 +1,13 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  BaseEntity,
+  Column,
+  Entity,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { Field, ID, ObjectType } from '@nestjs/graphql';
+import { TeamDriverEntity } from '@team/entities/team-driver.entity';
+import { TeamEntity } from '@team/entities/team.entity';
 
 @ObjectType('Driver')
 @Entity({ name: 'driver' })
@@ -24,4 +32,7 @@ export class DriverEntity extends BaseEntity {
   @Field()
   @Column()
   nationality: string;
+
+  @OneToMany(() => TeamDriverEntity, (team) => team.driver)
+  teams: TeamEntity[];
 }

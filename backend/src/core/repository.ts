@@ -27,6 +27,10 @@ export abstract class BaseRepository<T> {
     return this.repository.save(result, options);
   }
 
+  async save(model: T, options: SaveOptions = {}): Promise<T> {
+    return this.repository.save<T>(model, options);
+  }
+
   async update(
     id: number,
     partial: QueryDeepPartialEntity<T>,

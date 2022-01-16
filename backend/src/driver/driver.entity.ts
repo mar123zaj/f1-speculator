@@ -12,10 +12,6 @@ export class DriverEntity extends BaseEntity {
   @Column()
   name: string;
 
-  @Field({ nullable: true })
-  @Column({ nullable: true })
-  secondName: string;
-
   @Field()
   @Column()
   surname: string;

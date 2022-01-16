@@ -1,16 +1,11 @@
 import { Field, InputType } from '@nestjs/graphql';
-import { IsDateString, IsOptional, IsString } from 'class-validator';
+import { IsDateString, IsString } from 'class-validator';
 
 @InputType()
 export class AddDriverInput {
   @Field()
   @IsString()
   name: string;
-
-  @Field({ nullable: true })
-  @IsOptional()
-  @IsString()
-  secondName?: string;
 
   @Field()
   @IsString()

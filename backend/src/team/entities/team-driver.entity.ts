@@ -1,9 +1,16 @@
-import { BaseEntity, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  BaseEntity,
+  Entity,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+  Unique,
+} from 'typeorm';
 import { Field, ID, ObjectType } from '@nestjs/graphql';
 import { DriverEntity } from '@driver/driver.entity';
 import { TeamEntity } from '@team/entities/team.entity';
 
 @ObjectType('TeamDriver')
+@Unique('UQ_teamId_driverId', ['team', 'driver'])
 @Entity({ name: 'team_driver' })
 // TODO: Add uniqueness depending on the team-driver pair
 export class TeamDriverEntity extends BaseEntity {

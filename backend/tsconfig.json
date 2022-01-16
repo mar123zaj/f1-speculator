@@ -23,6 +23,7 @@
       "@config/*": ["src/config/*"],
       "@core/*": ["src/core/*"],
       "@driver/*": ["src/driver/*"],
+      "@constructor/*": ["src/constructor/*"],
       "@app/*": ["src/*"]
     }
   }

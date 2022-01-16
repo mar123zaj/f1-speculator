@@ -12,7 +12,6 @@ import { TeamEntity } from '@team/entities/team.entity';
 @ObjectType('TeamDriver')
 @Unique('UQ_teamId_driverId', ['team', 'driver'])
 @Entity({ name: 'team_driver' })
-// TODO: Add uniqueness depending on the team-driver pair
 export class TeamDriverEntity extends BaseEntity {
   @Field(() => ID)
   @PrimaryGeneratedColumn()

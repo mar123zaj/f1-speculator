@@ -5,11 +5,10 @@ import {
   PrimaryGeneratedColumn,
   Unique,
 } from 'typeorm';
-import { Field, ID, ObjectType } from '@nestjs/graphql';
+import { Field, ID } from '@nestjs/graphql';
 import { DriverEntity } from '@driver/driver.entity';
 import { TeamEntity } from '@team/entities/team.entity';
 
-@ObjectType('TeamDriver')
 @Unique('UQ_teamId_driverId', ['team', 'driver'])
 @Entity({ name: 'team_driver' })
 export class TeamDriverEntity extends BaseEntity {

@@ -24,6 +24,7 @@
       "@core/*": ["src/core/*"],
       "@driver/*": ["src/driver/*"],
       "@team/*": ["src/team/*"],
+      "@season/*": ["src/season/*"],
       "@app/*": ["src/*"]
     }
   }

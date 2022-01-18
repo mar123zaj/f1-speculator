@@ -25,6 +25,7 @@
       "@driver/*": ["src/driver/*"],
       "@team/*": ["src/team/*"],
       "@season/*": ["src/season/*"],
+      "@grand-prix/*": ["src/grand-prix/*"],
       "@app/*": ["src/*"]
     }
   }

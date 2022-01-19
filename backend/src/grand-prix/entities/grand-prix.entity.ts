@@ -1,4 +1,11 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  BaseEntity,
+  Column,
+  Entity,
+  OneToMany,
+  OneToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { Field, ID, ObjectType } from '@nestjs/graphql';
 
 @ObjectType('GrandPrix')
@@ -19,4 +26,8 @@ export class GrandPrixEntity extends BaseEntity {
   @Field()
   @Column()
   city: string;
+
+  @Field()
+  @Column({ type: 'daterange' })
+  date: string;
 }

@@ -35,4 +35,7 @@ export class GrandPrixEntity extends BaseEntity {
   @Field()
   @Column({ type: 'date' })
   endDate: string;
+
+  @OneToMany(() => PracticeEntity, (practice) => practice.grandPrix)
+  practices: PracticeEntity[];
 }

@@ -7,6 +7,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Field, ID, ObjectType } from '@nestjs/graphql';
+import { PracticeEntity } from '@grand-prix/entities/practice.entity';
 
 @ObjectType('GrandPrix')
 @Entity({ name: 'grand_prix' })
@@ -28,6 +29,10 @@ export class GrandPrixEntity extends BaseEntity {
   city: string;
 
   @Field()
-  @Column({ type: 'daterange' })
-  date: string;
+  @Column({ type: 'date' })
+  startDate: string;
+
+  @Field()
+  @Column({ type: 'date' })
+  endDate: string;
 }

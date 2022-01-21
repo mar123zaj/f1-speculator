@@ -5,6 +5,7 @@ import { DriverModule } from '@driver/driver.module';
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { GrandPrixModule } from './grand-prix/grand-prix.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     AuthModule,
     DriverModule,
     TeamModule,
+    GrandPrixModule,
   ],
 })
 export class AppModule {}

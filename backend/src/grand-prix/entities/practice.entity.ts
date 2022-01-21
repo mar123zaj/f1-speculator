@@ -4,11 +4,14 @@ import {
   Entity,
   ManyToOne,
   PrimaryGeneratedColumn,
+  Unique,
 } from 'typeorm';
 import { Field, ID, ObjectType } from '@nestjs/graphql';
 import { GrandPrixEntity } from '@grand-prix/entities/grand-prix.entity';
+import { PracticeSessionName } from '@grand-prix/types/practice-session-name.type';
 
 @ObjectType('Practice')
+@Unique('UQ_name_grandPrixId', ['name', 'grandPrix'])
 @Entity({ name: 'practice' })
 export class PracticeEntity extends BaseEntity {
   @Field(() => ID)
@@ -16,8 +19,11 @@ export class PracticeEntity extends BaseEntity {
   id: number;
 
   @Field()
-  @Column()
-  name: string;
+  @Column({
+    type: 'enum',
+    enum: PracticeSessionName,
+  })
+  name: PracticeSessionName;
 
   @Field()
   @Column({ type: 'timestamptz' })

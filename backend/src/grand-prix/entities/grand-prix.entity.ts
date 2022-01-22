@@ -10,6 +10,7 @@ import {
 import { Field, ID, ObjectType } from '@nestjs/graphql';
 import { PracticeEntity } from '@grand-prix/entities/practice.entity';
 import { QualifyingEntity } from '@grand-prix/entities/qualifying.entity';
+import { RaceEntity } from '@grand-prix/entities/race.entity';
 
 @ObjectType('GrandPrix')
 @Entity({ name: 'grand_prix' })
@@ -44,4 +45,8 @@ export class GrandPrixEntity extends BaseEntity {
   @OneToOne(() => QualifyingEntity, (qualifying) => qualifying.grandPrix)
   @JoinColumn()
   qualifying: QualifyingEntity;
+
+  @OneToOne(() => RaceEntity, (race) => race.grandPrix)
+  @JoinColumn()
+  race: RaceEntity;
 }

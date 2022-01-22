@@ -11,6 +11,7 @@ import { Field, ID, ObjectType } from '@nestjs/graphql';
 import { PracticeEntity } from '@grand-prix/entities/practice.entity';
 import { QualifyingEntity } from '@grand-prix/entities/qualifying.entity';
 import { RaceEntity } from '@grand-prix/entities/race.entity';
+import { CircuitEntity } from '@circuit/circuit.entity';
 
 @ObjectType('GrandPrix')
 @Entity({ name: 'grand_prix' })
@@ -38,6 +39,9 @@ export class GrandPrixEntity extends BaseEntity {
   @Field()
   @Column({ type: 'date' })
   endDate: string;
+
+  @OneToMany(() => CircuitEntity, (race) => race.grandPrix)
+  circuits: CircuitEntity[];
 
   @OneToMany(() => PracticeEntity, (practice) => practice.grandPrix)
   practices: PracticeEntity[];

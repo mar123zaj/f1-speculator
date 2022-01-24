@@ -3,6 +3,7 @@ import {
   Column,
   Entity,
   ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Field, ID, ObjectType } from '@nestjs/graphql';
@@ -35,6 +36,6 @@ export class CircuitEntity extends BaseEntity {
   @Column()
   turns: number;
 
-  @ManyToOne(() => GrandPrixEntity, (grandPrix) => grandPrix.circuits)
-  grandPrix: GrandPrixEntity;
+  @OneToMany(() => GrandPrixEntity, (grandPrix) => grandPrix.circuit)
+  grandsPrix: GrandPrixEntity[];
 }

@@ -3,6 +3,7 @@ import {
   Column,
   Entity,
   JoinColumn,
+  ManyToOne,
   OneToMany,
   OneToOne,
   PrimaryGeneratedColumn,
@@ -41,8 +42,8 @@ export class GrandPrixEntity extends BaseEntity {
   @Column({ type: 'date' })
   endDate: string;
 
-  @OneToMany(() => CircuitEntity, (race) => race.grandPrix)
-  circuits: CircuitEntity[];
+  @ManyToOne(() => CircuitEntity, (circuit) => circuit.grandsPrix)
+  circuit: CircuitEntity;
 
   @OneToMany(() => PracticeEntity, (practice) => practice.grandPrix)
   practices: PracticeEntity[];
